@@ -1,5 +1,10 @@
 # Parse and map ports to users {
-LISTENING_PORT=`cat /etc/assigned_vncserver_ports.conf | grep -v "^#" | grep $USER | cut -d "=" -f 2`
+CONFIG="/etc/assigned_vncserver_ports.conf" 
+if [ ! -f ${CONFIG} ]; then
+  echo "ERROR: ${CONFIG} file not found"
+  exit 1
+fi
+LISTENING_PORT=`cat ${CONFIG} | grep -v "^#" | grep $USER | cut -d "=" -f 2`
 CONST_BASE_PORT=5900
 DISPLAY_NUMBER=$(( $LISTENING_PORT - $CONST_BASE_PORT ))
 echo DISPLAY_NUMBER:$DISPLAY_NUMBER
