@@ -1,7 +1,14 @@
  Helpers scripts to launch a remote VNC server running a Linux desktop (gnome / i3).
+ 
+# PRE-SETUP
+
+````sh
+$ sudo dnf -y install i3 tigervnc-server
+# TODO: APT/APK/... install
+````
 
  The VNC server allows to run an X-server that keeps the screen state in a RAM memory buffer.
-
+ 
  A VNC client can then connect to the remote VNC server and render the screen locally
 (using elaborated VNC compression algorithms to save network bandwith)
 
@@ -22,7 +29,6 @@ daily tasks).  Some conflicts will arise when accesing it remotely from Windows 
 the overlap of key shortcuts in both i3 and Windows.
  The non-standard i3 shortcut layout in `_home_.config_i3_config` fixes this issue.
 Just copy and rename it to `$HOME/.config/i3/config`.
-
 
  External refs:
     - TigerVNC (http://TigerVNC.org) includes Xrandr extensions 
