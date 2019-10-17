@@ -16,7 +16,8 @@
 # PRE-SETUP
 
 ````sh
-$ sudo dnf -y install i3 tigervnc-server
+$ sudo dnf -y install i3 tigervnc-server  # RedHat flavour
+$ sudo apt -y install i3 tigervnc-standalone-server # Debian flavour
 # TODO: APT/APK/... install
 ````
 
